@@ -3,12 +3,12 @@ shop = [
     ["康师傅肥牛火锅面",2],
     ["康师傅京都炸酱面",2],
     ["康师傅排骨炖鸡面",2],
-    ["辣条",5],
+    ["辣条",300],
     ["lenovo电脑",5000]
 ]
 
 import random
-X = random.randint(10,31)
+X = random.randint(10,30)
 print(X)
 
 salary = input("请输入您的余额")
@@ -31,10 +31,11 @@ while True:
                 salary=salary-shop[num][1]
                 price=a-salary
                 integral=price/10
-                if price>=600:
+                if price>=600 and price<5000:
                     X>=10 and X<20
                     price=price-300
-                elif X>=20:
+                elif price>=5000:
+                    X>=20
                     price=price-((shop[4][1])/2)
                 print("成功添加到购物车")
             else:
@@ -52,11 +53,4 @@ for index,value in enumerate(mycart):
 print("您的余额为：",salary)
 print("您本次消费：",price)
 print("您本次消费累计的积分为：",integral)
-
-
-
-
-
-
-
 
